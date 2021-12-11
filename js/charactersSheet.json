@@ -1,0 +1,406 @@
+{
+  "attrModifier": 0.4,
+  "startPoints": {
+    "attr": 42,
+    "skill": 40
+  },
+  "maxPoints": {
+    "attr": 18,
+    "skill": 12
+  },
+  "attributes": [
+    {
+      "id": "FOR",
+      "name": "Force",
+      "desc": "Représente sa force physique, sa capacité à soulever des objets lourds, à faire des dégats",
+      "startMax": 9
+    },
+    {
+      "id": "AGI",
+      "name": "Agilité",
+      "desc": "Représente son agilité, sa rapidité, son sens de l'équilibre",
+      "startMax": 9
+    },
+    {
+      "id": "ROB",
+      "name": "Robustesse",
+      "desc": "Représente son agilité, sa rapidité, son sens de l'équilibre",
+      "startMax": 9
+    },
+    {
+      "id": "VOL",
+      "name": "Volonté",
+      "desc": "Représente la faculté de resister aux influences extérieures (colère, douleur, doute), se concentrer, garder son sang froid",
+      "startMax": 9
+    },
+    {
+      "id": "RAI",
+      "name": "Raisonnement",
+      "desc": "Représente la faculté de réagir aux éléments factuels, de faire des associations d'idées, etc",
+      "startMax": 9
+    },
+    {
+      "id": "INT",
+      "name": "Intuition",
+      "desc": "Représente l'instinct, l'interprétation de signe, l'intuition ",
+      "startMax": 9
+    }
+  ],
+  "skills": [
+    {
+      "id": "CMN",
+      "name": "Combat mains nues",
+      "desc": "Représente l'instinct, l'interprétation de signe, l'intuition ",
+      "startMax": 6,
+      "mod": ["FOR", "AGI", "VOL"]
+    },
+    {
+      "id": "CAR",
+      "name": "Combat armé",
+      "desc": "Représente tout type de combat avec une arme (armes 1 main, armes 2 mains, armes improvisées, boucliers, etc)",
+      "startMax": 6,
+      "mod": ["FOR", "AGI", "RAI"]
+    },
+    {
+      "id": "CDI",
+      "name": "Combat distance",
+      "desc": "Représente tout type de combat à distance (arcs, armes de jet, lancer son arme, etc)",
+      "startMax": 6,
+      "mod": ["FOR", "AGI", "INT"]
+    },
+    {
+      "id": "PSO",
+      "name": "Premiers soins",
+      "desc": "Représente la capacité à soigner les blessures en situation d'urgence, à stabiliser un blessé, à réduire le niveau des blessures sur le moment.",
+      "startMax": 6,
+      "mod": ["VOL", "INT"]
+    },
+    {
+      "id": "CHI",
+      "name": "Chirurgie",
+      "desc": "Représente la connaissance médicale du corps humain et la capacité d'effectuer des actions complexe pour soigner des blessures. <br/>Ces actions doivent être effectuées dans un environnement calme (pas au milieu de l'action)<br/>ex: recoudre une plaie, amputer, réduire une hémoragie, réduire une fracture, retirer un projectile, etc",
+      "startMax": 6,
+      "mod": ["VOL", "RAI"]
+    },
+    {
+      "id": "APO",
+      "name": "Apothicaire",
+      "desc": "Représente la connaissance en herboristerie, chimie et alchimie, symptomes des maladies, poisons et comment les traiter. <br/>Peut se rapprocher de la médecine générale.",
+      "startMax": 6,
+      "mod": ["RAI", "INT"]
+    },
+    {
+      "id": "ATH",
+      "name": "Athlétisme",
+      "desc": "Représente l'utilisation de vos capacités physiques pour des occasions comme l'escalade, la course de vitesse ou d'endurance, tirer une corde, etc",
+      "startMax": 6,
+      "mod": ["FOR", "AGI", "ROB"]
+    },
+    {
+      "id": "ART",
+      "name": "Artisanat",
+      "desc": "Représente la connaissance d'un métier manuel ou d'une famille de métier, l'habitude du travail manuel, etc. <br/>Les joueurs sont libre de l'interprétation mais attention, un professionnel forgeron n'est pas obligatoirement un professionnel charpentier...",
+      "startMax": 6,
+      "mod": ["AGI", "RAI", "ROB"]
+    },
+    {
+      "id": "REP",
+      "name": "Représentation",
+      "desc": "Représente la capacité à se donner en spectacle, chant, musique, théatre.",
+      "startMax": 6,
+      "mod": ["AGI", "INT", "ROB"]
+    },
+    {
+      "id": "ESC",
+      "name": "Escamotage",
+      "desc": "Représente la capacité à voler, à crocheter, à faire disparaitre un objet alors qu'on est en public, à faire un tour de passe passe, a subtiliser discrétement un objet sur un personnage.",
+      "startMax": 6,
+      "mod": ["AGI", "INT", "VOL"]
+    },
+    {
+      "id": "OCC",
+      "name": "Occultisme",
+      "desc": "Représente les connaissances occulte en sorcellerie ou magie divine, la capacité du personnage à conduire ou à participer à des rituels.",
+      "startMax": 0,
+      "mod": ["VOL", "RAI", "INT"]
+    },
+    {
+      "id": "DIS",
+      "name": "Discrétion",
+      "desc": "Représente la capacité à se déplacer de manière silencieuse, à savoir se fondre dans la masse ou le décors, à se déplacer dans les ombres, à faire des signes sans attirer l'attention",
+      "startMax": 6,
+      "mod": ["AGI", "INT"]
+    },
+    {
+      "id": "PER",
+      "name": "Perception",
+      "desc": "Représente la capacité d'observation de l'environnement, remarquer des détails proche ou lointain, l'évaluation des distances, les actions/intentions physique d'un personnage (ex remarquer une lame dissimulée, remarquer une posture agressive) mais PAS les intentions \"sociale\" (ex: sembler mentir, sembler géné )",
+      "startMax": 6,
+      "mod": ["INT", "RAI"]
+    },
+    {
+      "id": "TRO",
+      "name": "Tromperie",
+      "desc": "Représente la capacité à mentir, à déguiser la vérité, à jouer la comédie, à dissimuler ses intentions, à tromper, etc",
+      "startMax": 6,
+      "mod": ["VOL", "INT"]
+    },
+    {
+      "id": "PSY",
+      "name": "Psychologie",
+      "desc": "Représente la capacité à sentir l'état d'esprit d'un personnage, reconnaitre un mensonge, lire le langage corporel, etc",
+      "startMax": 6,
+      "mod": ["RAI", "INT"]
+    }
+  ],
+  "specials": [
+    {
+      "id": "HER",
+      "name": "Héritage",
+      "desc": "Représente votre lien avec le pouvoir des stèles",
+      "levels": [
+        {
+          "title": "Sans Guilde",
+          "value": 0
+        },
+        {
+          "title": "Initié",
+          "value": 3
+        },
+        {
+          "title": "Confirmé",
+          "value": 6
+        },
+        {
+          "title": "Mentor",
+          "value": 9
+        },
+        {
+          "title": "Gardien",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "id": "DEF",
+      "name": "Défense",
+      "desc": "Le seuil de réussite pour vous toucher.\n10 + moyenne (combat main nue + combat armé + Intuition)",
+      "calc": {
+        "base": 10,
+        "mod": ["CMN", "CAR", "INT"]
+      }
+    },
+    {
+      "id": "ARM",
+      "name": "Armure (Mutator)",
+      "desc": "Niveau d'armure calculé automatiquement avec l'équipement porté par le joueur.\nMerci de rester fairplay et de ne pas cacher les pièces d'armures pour vous battre à poil..."
+    },
+    {
+      "id": "FAT",
+      "name": "Fatigue",
+      "desc": "Fatigue accumulée sous les coups. Une fois la jauge pleine, une blessure est automatiquement roll."
+    },
+    {
+      "id": "USU",
+      "name": "Usure",
+      "desc": "Chaque blessure dans un combat RR ajoute 5 points. Quand la fatigue est au max, le jet de blessure est systématique lors des attaques réussie. <br/>Le nombre d'Usure est ajouté au roll qui calcule la gravité du coup porté.",
+      "calc": {
+        "value": "0/20"
+      }
+    },
+    {
+      "id": "ESP",
+      "name": "Esprit",
+      "desc": "Votre potentiel magique... peut servir lorsque vous êtes sollicité lors de rituel, sert aussi de resistance à la magie."
+    }
+  ],
+  "lifePaths": [
+    {
+      "name": "Combattant",
+      "id": "COMB",
+      "desc": "Vous avez passé une grande partie de votre vie à vous battre",
+      "bonus": [
+        {
+          "id": "FOR",
+          "value": 3,
+          "name": "Force"
+        },
+        {
+          "id": "VOL",
+          "value": 3,
+          "name": "Volonté"
+        },
+        {
+          "id": "ATH",
+          "value": 2,
+          "name": "Athéltisme"
+        },
+        {
+          "id": "CMN",
+          "value": 2,
+          "name": "Combat main nue"
+        },
+        {
+          "id": "CAR",
+          "value": 2,
+          "name": "Combat armé"
+        },
+        {
+          "id": "PSO",
+          "value": 2,
+          "name": "Premiers soins"
+        },
+        {
+          "id": "PER",
+          "value": 2,
+          "name": "Perception"
+        }
+      ]
+    },
+    {
+      "name": "Roublard",
+      "id": "ROUB",
+      "desc": "Vous avez passé une grande partie de votre vie à ne compter que sur vous même pour survivre",
+      "bonus": [
+        {
+          "id": "AGI",
+          "value": 3,
+          "name": "Agilité"
+        },
+        {
+          "id": "INT",
+          "value": 3,
+          "name": "Intuition"
+        },
+        {
+          "id": "CDI",
+          "value": 2,
+          "name": "Combat à distance"
+        },
+        {
+          "id": "PER",
+          "value": 2,
+          "name": "Perception"
+        },
+        {
+          "id": "DIS",
+          "value": 2,
+          "name": "Discrétion"
+        },
+        {
+          "id": "ESC",
+          "value": 2,
+          "name": "Escamotage"
+        },
+        {
+          "id": "TRO",
+          "value": 2,
+          "name": "Tromperie"
+        }
+      ]
+    },
+    {
+      "name": "Erudit",
+      "id": "ERUD",
+      "desc": "Vous avez passé une grande partie de votre vie à accumuler des connaissances",
+      "bonus": [
+        {
+          "id": "ROB",
+          "value": 3,
+          "name": "Robustesse"
+        },
+        {
+          "id": "RAI",
+          "value": 3,
+          "name": "Raisonnement"
+        },
+        {
+          "id": "CMN",
+          "value": 2,
+          "name": "Combat mains nues"
+        },
+        {
+          "id": "PSO",
+          "value": 2,
+          "name": "Premiers soins"
+        },
+        {
+          "id": "CHI",
+          "value": 2,
+          "name": "Chirurgie"
+        },
+        {
+          "id": "APO",
+          "value": 2,
+          "name": "Apothicaire"
+        },
+        {
+          "id": "OCC",
+          "value": 2,
+          "name": "Occultisme"
+        }
+      ]
+    },
+    {
+      "name": "Artisant",
+      "id": "ARTI",
+      "desc": "Vous avez passé une grande partie de votre vie à travailler avec vos mains",
+      "bonus": [
+        {
+          "id": "ROB",
+          "value": 3,
+          "name": "Robustesse"
+        },
+        {
+          "id": "INT",
+          "value": 3,
+          "name": "Intuition"
+        },
+        {
+          "id": "CAR",
+          "value": 2,
+          "name": "Combat armé"
+        },
+        {
+          "id": "ART",
+          "value": 2,
+          "name": "Artisanat"
+        },
+        {
+          "id": "PER",
+          "value": 2,
+          "name": "Perception"
+        },
+        {
+          "id": "PSY",
+          "value": 2,
+          "name": "Psychologie"
+        },
+        {
+          "id": "TRO",
+          "value": 2,
+          "name": "Tromperie"
+        }
+      ]
+    }
+  ]
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
