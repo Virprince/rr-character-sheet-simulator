@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Vassharan Conan Exiles Feuille de personnage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-        [data-active="true"] {
+        [data-active="true"] > div {
             background: #0dcaf0;
         }
     </style>
@@ -19,37 +20,47 @@
     <main class="p-5">
         <div class="row">
                 <div class="col-8">
-                    <div id="statTable" class=""></div>
-                    <div id="attrTable">
-                        <div class="row border">
-                            <div class="col-6 border-start border-end text-center">
-                                <p class="fw-bold m-0">Attributs physiques et mentaux</p>
+                    <div id="statTable" class="">
+                        <div class="row border bg-primary text-white border-primary" >
+                            <div class="col-10">
+                                <p class="m-0 fw-bold">Stats</p>
                             </div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col border-start text-center">
-                                <p class="fw-bold m-0">Niveau</p>
-                            </div>
-                            <div class="col-2 d-flex align-items-start border-start border-end">
+                            <div class="col border-start text-white border-primary text-center">
+                                <p class="m-0 fw-bold">Valeur</p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="skillTable">
-                        <div class="row border">
-                            <div class="col-6 border-start border-end text-center">
+                    <div id="attrTable" class="mt-3">
+                        <div class="row border bg-primary text-white border-primary">
+                            <div class="col-6 border-end text-center border-primary">
+                                <p class="fw-bold m-0">Attributs physiques et mentaux</p>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col"></div>
+                            <div class="col border-start text-center border-primary">
+                                <p class="fw-bold m-0">Niveau</p>
+                            </div>
+                            <div class="col-2 d-flex align-items-start border-start border-primary">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="skillTable" class="mt-3">
+                        <div class="row border bg-primary text-white border-primary">
+                            <div class="col-6 text-center">
                                 <p class="fw-bold m-0">Compétences</p>
                             </div>
-                            <div class="col border-start text-center">
+                            <div class="col border-start text-center border-primary">
                                 <p class="fw-bold m-0">Mod</p>
                             </div>
-                            <div class="col border-start text-center">
+                            <div class="col border-start text-center border-primary">
                                 <p class="fw-bold m-0">Bonus</p>
                             </div>
-                            <div class="col border-start text-center">
+                            <div class="col border-start text-center border-primary">
                                 <p class="fw-bold m-0">Total</p>
                             </div>
-                            <div class="col-2 d-flex align-items-start border-start border-end">
+                            <div class="col-2 d-flex align-items-start border-start border-primary">
                             </div>
                         </div>
                     </div>
@@ -65,22 +76,25 @@
                             <span class="badge bg-warning" id="skillPoints" data-max="xx" data-value="xx">XX</span>
                         </div>
                     </div>
+                    <hr>
                     <div id="lifePathTable" class="row"></div>
-                    <div id="levelTable">
-                        <div class="row">
+                    <hr>
+                    <div id="levelTable" class="ps-3 pe-3">
+                        <div class="row border bg-light">
                             <div class="col-6">
                                 <strong>Niveau</strong>
                             </div>
-                            <div class="col-3"><strong>Attr</strong></div>
-                            <div class="col-3"><strong>Comp</strong></div>
+                            <div class="col-3 border-start"><strong>Attr</strong></div>
+                            <div class="col-3 border-start"><strong>Comp</strong></div>
                         </div>
                     </div>
-                    <div id="thresholdTable">
-                        <div class="row">
+                    <hr>
+                    <div id="thresholdTable" class="ps-3 pe-3">
+                        <div class="row border bg-light">
                             <div class="col-9">
                                 <strong>Difficulté</strong>
                             </div>
-                            <div class="col-3"><strong>Jet</strong></div>
+                            <div class="col-3 border-start"><strong>Jet</strong></div>
                         </div>
                     </div>
                 </div>

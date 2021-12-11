@@ -3,10 +3,6 @@ import data from "./charactersSheet.json" assert { type: "json" };
 const {startPoints,maxPoints,attributes,skills} = data;
 
 
-const updatePoints = () => {
-
-}
-
 const buildDom = data => {
 
     const attrTable = $('#attrTable');
@@ -62,7 +58,7 @@ const buildDom = data => {
     const attribute = (attr) => {
         return `
             <div class="js-row row border" data-id="${attr.id}">
-                <div class="col-6 border-start border-end">
+                <div class="col-6 d-flex align-items-center">
                     <p class="m-0 fw-bold">${attr.name}
                         <a tabindex="0" 
                         role="button" 
@@ -70,17 +66,17 @@ const buildDom = data => {
                         data-bs-trigger="focus" 
                         data-bs-html="true"
                         title="Infos" data-bs-content="${attr.desc}">
-                        <span class="badge bg-info text-dark">?</span></a>
+                        <span class="badge bg-light text-dark">?</span></a>
                     </p>
                 </div>
                 <div class="col"></div>
                 <div class="col"></div>
-                <div class="col border-start">
+                <div class="col border-start  d-flex align-items-center">
                     + <span class="js-value" data-bonus="0" data-value="0" data-startmax="${attr.startMax}">0</span>
                 </div>
-                <div class="col-2 d-flex align-items-start border-start border-end">
-                    <button class="btn btn-xs btn-outline-info js-point" data-action="add" data-type="attribute">+</button>
-                    <button class="btn btn-xs btn-outline-info js-point" data-action="remove" data-type="attribute" disabled>-</button>
+                <div class="col-2 d-flex align-items-start border-start">
+                    <button class="btn btn-xs btn-light js-point me-2" data-action="add" data-type="attribute"><i class="bi bi-plus"></i></button>
+                    <button class="btn btn-xs btn-light js-point" data-action="remove" data-type="attribute" disabled><i class="bi bi-dash-lg"></i></button>
                 </div>
             </div>
         `;
@@ -94,7 +90,7 @@ const buildDom = data => {
 
         return `
             <div class="js-row row border" data-id="${skill.id}">
-                <div class="col-6 border-start">
+                <div class="col-6 d-flex align-items-center">
                     <p class="m-0 fw-bold">${skill.name}
                         <a tabindex="0" 
                         role="button" 
@@ -102,21 +98,21 @@ const buildDom = data => {
                         data-bs-html="true"
                         data-bs-trigger="focus" 
                         title="Infos" data-bs-content="${skill.desc}">
-                        <span class="badge bg-info text-dark">?</span></a>
+                        <span class="badge bg-light text-dark">?</span></a>
                     </p>
                 </div>
-                <div class="col border-start" data-mod="0">
+                <div class="col border-start d-flex align-items-center" data-mod="0">
                     + <span class="js-modValue" data-modvalue="0">0</span>
                 </div>
-                <div class="col border-start">
+                <div class="col border-start d-flex align-items-center">
                     + <span class="js-value" data-bonus="0" data-value="0" data-startmax="${skill.startMax}">0</span>
                 </div>
-                <div class="col border-start">
+                <div class="col border-start d-flex align-items-center">
                     + <span class="js-totalValue" data-totalvalue="0">0</span>
                 </div>
-                <div class="col-2 d-flex align-items-start border-start border-end">
-                    <button class="btn btn-xs btn-outline-info js-point" data-action="add" data-type="skill" ${btnDisabled}>+</button>
-                    <button class="btn btn-xs btn-outline-info js-point" data-action="remove" data-type="skill" disabled>-</button>
+                <div class="col-2 d-flex align-items-start border-start">
+                    <button class="btn btn-xs btn-light js-point me-2" data-action="add" data-type="skill" ${btnDisabled}><i class="bi bi-plus"></i></button>
+                    <button class="btn btn-xs btn-light js-point" data-action="remove" data-type="skill" disabled><i class="bi bi-dash-lg"></i></button>
                 </div>
                 
             </div>
@@ -132,24 +128,24 @@ const buildDom = data => {
 
         return `
             <div class="js-row row border" data-id="${special.id}">
-                <div class="col-6 border-start border-end">
+                <div class="col-6 border-start d-flex align-items-center">
                     <p class="m-0 fw-bold">${special.name} 
                         <a tabindex="0" 
                         role="button" 
                         data-bs-toggle="popover" 
                         data-bs-trigger="focus" 
                         title="Infos" data-bs-content="${special.desc}">
-                        <span class="badge bg-info text-dark"">?</span></a>
+                        <span class="badge bg-light text-dark"">?</span></a>
                     </p>
                     <p class="m-0"></p>
                 </div>
                 <div class="col"></div>
                 <div class="col"></div>
-                <div class="col border">
+                <div class="col border d-flex align-items-center">
                     + <span class="js-value" data-bonus="0" data-value="0" >0</span>
                 </div>
                 <div class="col-2 border-start border-end">
-                    <select class="js-guild">
+                    <select class="js-guild form-select">
                         ${options}
                     </select>
                 </div>
@@ -174,7 +170,7 @@ const buildDom = data => {
                        data-bs-html="true"
                        data-bs-trigger="focus"
                        title="Infos" data-bs-content="${content}">
-                        <span class="badge bg-info text-dark">?</span></a>
+                        <span class="badge bg-light text-dark">?</span></a>
                 </p>
                 <button data-action="select" class="btn btn-primary">Choisir</button>
                 <button data-action="reset" class="d-none btn btn-light">Retirer</button>
@@ -185,18 +181,18 @@ const buildDom = data => {
     const stat = (stat) => {
         return `
             <div class="js-stat row border" data-id="${stat.id}">
-                <div class="col-8">
-                    <p class="m-0 fw-bold">${stat.name}
+                <div class="col-10">
+                    <p class="m-0 fw-bold pt-2 pb-2">${stat.name}
                         <a tabindex="0" 
                         role="button" 
                         data-bs-toggle="popover" 
                         data-bs-html="true"
                         data-bs-trigger="focus" 
                         title="Infos" data-bs-content="${stat.desc}">
-                        <span class="badge bg-info text-dark">?</span></a>
+                        <span class="badge bg-light text-dark">?</span></a>
                     </p>
                 </div>
-                <div class="col border-start">
+                <div class="col border-start pt-2 pb-2">
                     <span class="js-value" data-value="0">0</span>
                 </div>
             </div>
@@ -204,22 +200,22 @@ const buildDom = data => {
     }
     const level = (level) => {
         return `
-            <div class="row">
+            <div class="row border">
                 <div class="col-6">
                     ${level.name}
                 </div>
-                <div class="col-3">+ ${level.attr}</div>
-                <div class="col-3">+ ${level.skill}</div>
+                <div class="col-3 border-start">+ ${level.attr}</div>
+                <div class="col-3 border-start">+ ${level.skill}</div>
             </div>
         `;
     }
     const threshold = (threshold) => {
         return `
-            <div class="row">
+            <div class="row border">
                 <div class="col-9">
                     ${threshold.name}
                 </div>
-                <div class="col-3">+ ${threshold.roll}</div>
+                <div class="col-3 border-start">+ ${threshold.roll}</div>
             </div>
         `;
     }
@@ -315,6 +311,9 @@ const update = data => {
         stats.forEach(stat => {
             updateStat(stat);
         })
+
+        updateTotal(row);
+
     }
 
     const updateType = target =>{
@@ -353,6 +352,7 @@ const update = data => {
                 let rowEl = skillTable.find(`[data-id="${el.id}"]`)
 
                 rowEl.find('.js-modValue').html(modCalc).attr('data-modvalue', modCalc);
+                updateTotal(rowEl);
 
             }
         })
@@ -360,6 +360,7 @@ const update = data => {
         stats.forEach(stat => {
             updateStat(stat);
         })
+
 
     }
 
@@ -381,7 +382,6 @@ const update = data => {
         let activePaths = lifePathTable.find('.js-lifePath[data-active="true"]');
         if (activePaths.length > 0){
             let activePathData = lifePaths.find(o => o.id === $(activePaths[0]).attr('data-id'))
-            console.log(activePathData);
             removeLifePath(activePathData, $(activePaths[0]));
         }
 
@@ -413,6 +413,7 @@ const update = data => {
         stats.forEach(stat => {
             updateStat(stat);
         })
+        updateTotal(row);
     }
 
     const addLifePath = (lifePathData, row) => {
@@ -438,6 +439,7 @@ const update = data => {
         stats.forEach(stat => {
             updateStat(stat);
         })
+        updateTotal(row);
     }
 
     const updateStat = (statData) => {
@@ -476,22 +478,39 @@ const update = data => {
         rowEl.find('.js-value').html(result).attr('data-value', result);
     }
 
+    const updateTotal = (row) => {
+        let modValue = row.find('.js-modValue');
+        let value = row.find('.js-value');
+        let totalValue = row.find('.js-totalValue');
+        let calcTotal = 0;
+        if (modValue.length > 0) {
+
+            calcTotal +=  parseInt(modValue.attr('data-modvalue'));
+            calcTotal +=  parseInt(value.attr('data-value'));
+            calcTotal +=  parseInt(value.attr('data-bonus'));
+
+            totalValue.html(calcTotal).attr('data-totalvalue', calcTotal);
+
+
+        }
+    }
+
     return {
         init: () => {
-            $(document).on('click', 'button.js-point', el => {
-                updateType(el.target);
+            $(document).on('click', 'button.js-point', e => {
+                updateType(e.currentTarget);
             })
 
-            $(document).on('change', '.js-guild', el => {
-                updateGuild(el.target);
+            $(document).on('change', '.js-guild', e => {
+                updateGuild(e.target);
             })
 
-            $(document).on('click', '.js-lifePath button[data-action="select"]', el => {
-                updateLifePath(el.target);
+            $(document).on('click', '.js-lifePath button[data-action="select"]', e => {
+                updateLifePath(e.target);
             })
 
-            $(document).on('click', '.js-lifePath button[data-action="reset"]', el => {
-                let row = $(el.target).closest('.js-lifePath');
+            $(document).on('click', '.js-lifePath button[data-action="reset"]', e => {
+                let row = $(e.target).closest('.js-lifePath');
                 let pathId = row.attr('data-id');
                 let pathData = lifePaths.find(o => o.id === pathId);
                 removeLifePath(pathData,row);
@@ -511,6 +530,5 @@ $( function () {
     let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
-
 
 });
