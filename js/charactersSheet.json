@@ -50,105 +50,105 @@
     {
       "id": "CMN",
       "name": "Combat mains nues",
-      "desc": "Représente l'instinct, l'interprétation de signe, l'intuition ",
+      "desc": "Représente l'instinct, l'interprétation de signe, l'intuition <br><br> Moyenne(Force + Agilité + Volonté)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["FOR", "AGI", "VOL"]
     },
     {
       "id": "CAR",
       "name": "Combat armé",
-      "desc": "Représente tout type de combat avec une arme (armes 1 main, armes 2 mains, armes improvisées, boucliers, etc)",
+      "desc": "Représente tout type de combat avec une arme (armes 1 main, armes 2 mains, armes improvisées, boucliers, etc)<br><br> Moyenne(Force + Agilité + Raisonnement)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["FOR", "AGI", "RAI"]
     },
     {
       "id": "CDI",
       "name": "Combat distance",
-      "desc": "Représente tout type de combat à distance (arcs, armes de jet, lancer son arme, etc)",
+      "desc": "Représente tout type de combat à distance (arcs, armes de jet, lancer son arme, etc)<br><br> Moyenne(Force + Agilité + Intuition)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["FOR", "AGI", "INT"]
     },
     {
       "id": "PSO",
       "name": "Premiers soins",
-      "desc": "Représente la capacité à soigner les blessures en situation d'urgence, à stabiliser un blessé, à réduire le niveau des blessures sur le moment.",
+      "desc": "Représente la capacité à soigner les blessures en situation d'urgence, à stabiliser un blessé, à réduire le niveau des blessures sur le moment.<br><br> Moyenne(Intuition + Volonté)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["VOL", "INT"]
     },
     {
       "id": "CHI",
       "name": "Chirurgie",
-      "desc": "Représente la connaissance médicale du corps humain et la capacité d'effectuer des actions complexe pour soigner des blessures. <br/>Ces actions doivent être effectuées dans un environnement calme (pas au milieu de l'action)<br/>ex: recoudre une plaie, amputer, réduire une hémoragie, réduire une fracture, retirer un projectile, etc",
+      "desc": "Représente la connaissance médicale du corps humain et la capacité d'effectuer des actions complexe pour soigner des blessures. <br/>Ces actions doivent être effectuées dans un environnement calme (pas au milieu de l'action)<br/>ex: recoudre une plaie, amputer, réduire une hémoragie, réduire une fracture, retirer un projectile, etc<br><br> Moyenne(Raisonnement + Volonté)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["VOL", "RAI"]
     },
     {
       "id": "APO",
       "name": "Apothicaire",
-      "desc": "Représente la connaissance en herboristerie, chimie et alchimie, symptomes des maladies, poisons et comment les traiter. <br/>Peut se rapprocher de la médecine générale.",
+      "desc": "Représente la connaissance en herboristerie, chimie et alchimie, symptomes des maladies, poisons et comment les traiter. <br/>Peut se rapprocher de la médecine générale.<br><br> Moyenne(Raisonnement + Intuition)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["RAI", "INT"]
     },
     {
       "id": "ATH",
       "name": "Athlétisme",
-      "desc": "Représente l'utilisation de vos capacités physiques pour des occasions comme l'escalade, la course de vitesse ou d'endurance, tirer une corde, etc",
+      "desc": "Représente l'utilisation de vos capacités physiques pour des occasions comme l'escalade, la course de vitesse ou d'endurance, tirer une corde, etc<br><br> Moyenne(Force + Agilité + Robustesse)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["FOR", "AGI", "ROB"]
     },
     {
       "id": "ART",
       "name": "Artisanat",
-      "desc": "Représente la connaissance d'un métier manuel ou d'une famille de métier, l'habitude du travail manuel, etc. <br/>Les joueurs sont libre de l'interprétation mais attention, un professionnel forgeron n'est pas obligatoirement un professionnel charpentier...",
+      "desc": "Représente la connaissance d'un métier manuel ou d'une famille de métier, l'habitude du travail manuel, etc. <br/>Les joueurs sont libre de l'interprétation mais attention, un professionnel forgeron n'est pas obligatoirement un professionnel charpentier...<br><br> Moyenne(Robustesse + Agilité + Raisonnement)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["AGI", "RAI", "ROB"]
     },
     {
       "id": "REP",
       "name": "Représentation",
-      "desc": "Représente la capacité à se donner en spectacle, chant, musique, théatre.",
+      "desc": "Représente la capacité à se donner en spectacle, chant, musique, théatre.<br><br> Moyenne(Robustesse + Agilité + Intuition)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["AGI", "INT", "ROB"]
     },
     {
       "id": "ESC",
       "name": "Escamotage",
-      "desc": "Représente la capacité à voler, à crocheter, à faire disparaitre un objet alors qu'on est en public, à faire un tour de passe passe, a subtiliser discrétement un objet sur un personnage.",
+      "desc": "Représente la capacité à voler, à crocheter, à faire disparaitre un objet alors qu'on est en public, à faire un tour de passe passe, a subtiliser discrétement un objet sur un personnage.<br><br> Moyenne(Intuition + Agilité + Volonté)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["AGI", "INT", "VOL"]
     },
     {
       "id": "OCC",
       "name": "Occultisme",
-      "desc": "Représente les connaissances occulte en sorcellerie ou magie divine, la capacité du personnage à conduire ou à participer à des rituels.",
+      "desc": "Représente les connaissances occulte en sorcellerie ou magie divine, la capacité du personnage à conduire ou à participer à des rituels.<br><br> Moyenne(Raisonnement + Intuition + Volonté)x0,4 arrondi à l'inférieur",
       "startMax": 0,
       "mod": ["VOL", "RAI", "INT"]
     },
     {
       "id": "DIS",
       "name": "Discrétion",
-      "desc": "Représente la capacité à se déplacer de manière silencieuse, à savoir se fondre dans la masse ou le décors, à se déplacer dans les ombres, à faire des signes sans attirer l'attention",
+      "desc": "Représente la capacité à se déplacer de manière silencieuse, à savoir se fondre dans la masse ou le décors, à se déplacer dans les ombres, à faire des signes sans attirer l'attention<br><br> Moyenne(Agilité + Intuition)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["AGI", "INT"]
     },
     {
       "id": "PER",
       "name": "Perception",
-      "desc": "Représente la capacité d'observation de l'environnement, remarquer des détails proche ou lointain, l'évaluation des distances, les actions/intentions physique d'un personnage (ex remarquer une lame dissimulée, remarquer une posture agressive) mais PAS les intentions \"sociale\" (ex: sembler mentir, sembler géné )",
+      "desc": "Représente la capacité d'observation de l'environnement, remarquer des détails proche ou lointain, l'évaluation des distances, les actions/intentions physique d'un personnage (ex remarquer une lame dissimulée, remarquer une posture agressive) mais PAS les intentions \"sociale\" (ex: sembler mentir, sembler géné )<br><br> Moyenne(Intuition + Raisonnement)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["INT", "RAI"]
     },
     {
       "id": "TRO",
       "name": "Tromperie",
-      "desc": "Représente la capacité à mentir, à déguiser la vérité, à jouer la comédie, à dissimuler ses intentions, à tromper, etc",
+      "desc": "Représente la capacité à mentir, à déguiser la vérité, à jouer la comédie, à dissimuler ses intentions, à tromper, etc<br><br> Moyenne(Intuition + Volonté)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["VOL", "INT"]
     },
     {
       "id": "PSY",
       "name": "Psychologie",
-      "desc": "Représente la capacité à sentir l'état d'esprit d'un personnage, reconnaitre un mensonge, lire le langage corporel, etc",
+      "desc": "Représente la capacité à sentir l'état d'esprit d'un personnage, reconnaitre un mensonge, lire le langage corporel, etc<br><br> Moyenne(Raisonnement + Intuition)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["RAI", "INT"]
     }
@@ -186,7 +186,7 @@
     {
       "id": "DEF",
       "name": "Défense",
-      "desc": "Le seuil de réussite pour vous toucher.\n10 + moyenne (combat main nue + combat armé + Intuition)",
+      "desc": "Le seuil de réussite pour vous toucher.<br><br>10 + moyenne(combat main nue + combat armé + Intuition)",
       "calc": {
         "base": 10,
         "mod": ["CMN", "CAR", "INT"]
@@ -195,12 +195,12 @@
     {
       "id": "ARM",
       "name": "Armure (Mutator)",
-      "desc": "Niveau d'armure calculé automatiquement avec l'équipement porté par le joueur.\nMerci de rester fairplay et de ne pas cacher les pièces d'armures pour vous battre à poil..."
+      "desc": "Niveau d'armure calculé automatiquement avec l'équipement porté par le joueur.<br>Merci de rester fairplay et de ne pas cacher les pièces d'armures pour vous battre à poil..."
     },
     {
       "id": "FAT",
       "name": "Fatigue",
-      "desc": "Fatigue accumulée sous les coups. Une fois la jauge pleine, une blessure est automatiquement roll.",
+      "desc": "Fatigue accumulée sous les coups. Une fois la jauge pleine, une blessure doit systématiquement être roll lorsqu'on est touché<br><br> Robustesse x 0,4 arrondi à l'inférieur",
       "calc": {
         "mod": ["ROB"],
         "attrModifier": 0.4
@@ -209,7 +209,7 @@
     {
       "id": "USU",
       "name": "Usure",
-      "desc": "Chaque blessure dans un combat RR ajoute 5 points. Quand la fatigue est au max, le jet de blessure est systématique lors des attaques réussie. <br/>Le nombre d'Usure est ajouté au roll qui calcule la gravité du coup porté.",
+      "desc": "Chaque blessure dans un combat RR ajoute 5 points.<br/>Le nombre d'Usure est ajouté au roll qui calcule la gravité du coup porté. <br><br> Jet de blessure = 1d20 + Usure - Armure",
       "calc": {
         "value": "0/20"
       }
