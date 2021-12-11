@@ -134,7 +134,7 @@
     {
       "id": "PER",
       "name": "Perception",
-      "desc": "Représente la capacité d'observation de l'environnement, remarquer des détails proche ou lointain, l'évaluation des distances, les actions/intentions physique d'un personnage (ex remarquer une lame dissimulée, remarquer une posture agressive) mais PAS les intentions \"sociale\" (ex: sembler mentir, sembler géné )<br><br> Moyenne(Intuition + Raisonnement)x0,4 arrondi à l'inférieur",
+      "desc": "Représente la capacité d'observation de l'environnement, remarquer des détails proche ou lointain, l'évaluation des distances, les actions/intentions physique d'un personnage (ex remarquer une lame dissimulée, remarquer une posture agressive) mais PAS les intentions ``sociale`` (ex: sembler mentir, sembler géné ) <br><br> Moyenne(Intuition + Raisonnement)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["INT", "RAI"]
     },
