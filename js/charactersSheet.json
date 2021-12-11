@@ -200,7 +200,11 @@
     {
       "id": "FAT",
       "name": "Fatigue",
-      "desc": "Fatigue accumulée sous les coups. Une fois la jauge pleine, une blessure est automatiquement roll."
+      "desc": "Fatigue accumulée sous les coups. Une fois la jauge pleine, une blessure est automatiquement roll.",
+      "calc": {
+        "mod": ["ROB"],
+        "attrModifier": 0.4
+      }
     },
     {
       "id": "USU",
@@ -213,7 +217,10 @@
     {
       "id": "ESP",
       "name": "Esprit",
-      "desc": "Votre potentiel magique... peut servir lorsque vous êtes sollicité lors de rituel, sert aussi de resistance à la magie."
+      "desc": "Votre potentiel magique... peut servir lorsque vous êtes sollicité lors de rituel, sert aussi de resistance à la magie.",
+      "calc": {
+        "mod": ["OCC", "HER", "VOL"]
+      }
     }
   ],
   "lifePaths": [
@@ -385,9 +392,84 @@
         }
       ]
     }
+  ],
+  "levels": [
+    {
+      "name": "Inapte",
+      "attr": 0,
+      "skill": 0
+    },{
+      "name": "Débutant",
+      "attr": 3,
+      "skill": 2
+    },{
+      "name": "Initié",
+      "attr": 6,
+      "skill": 4
+    },{
+      "name": "Entrainé",
+      "attr": 9,
+      "skill": 6
+    },{
+      "name": "Pro",
+      "attr": 12,
+      "skill": 8
+    },{
+      "name": "Expert",
+      "attr": 15,
+      "skill": 10
+    },{
+      "name": "Maitre",
+      "attr": 18,
+      "skill": 12
+    }
+  ],
+  "thresholds": [
+    {
+      "name": "Très Facile",
+      "roll": 8
+    },
+    {
+      "name": "Facile",
+      "roll": 12
+    },
+    {
+      "name": "Moyen",
+      "roll": 16
+    },
+    {
+      "name": "Difficile",
+      "roll": 20
+    },
+    {
+      "name": "Très difficile",
+      "roll": 24
+    },
+    {
+      "name": "Miracle",
+      "roll": 28
+    }
   ]
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

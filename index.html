@@ -14,25 +14,12 @@
 
 <div class="container-fluid">
     <header>
-        <h1>Simulateur de feuille de personnage</h1>
+        <h1>Simulateur de feuille de personnage (PAS FINI!)</h1>
     </header>
-    <main>
-        <div class="container">
-            <div id="lifePathTable" class="row">
-
-            </div>
-            <div class="row">
+    <main class="p-5">
+        <div class="row">
                 <div class="col-8">
-                    <div class="row">
-                        <div class="col p-5 fw-bold fs-4">
-                            Points Attributs: <span class="badge bg-warning" id="attrPoints" data-max="xx" data-value="xx">XX</span>
-                        </div>
-                        <div class="col p-5 fw-bold fs-4">
-                            Points Compétences: <span class="badge bg-warning" id="skillPoints" data-max="xx" data-value="xx">XX</span>
-                        </div>
-
-                    </div>
-
+                    <div id="statTable" class=""></div>
                     <div id="attrTable">
                         <div class="row border">
                             <div class="col-6 border-start border-end text-center">
@@ -68,13 +55,36 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <div id="statTable" class="p-3">
-
+                    <div class="row">
+                        <div class="col-6 p-2 fw-bold fs-4 text-center">
+                            Points Attributs: <br>
+                            <span class="badge bg-warning" id="attrPoints" data-max="xx" data-value="xx">XX</span>
+                        </div>
+                        <div class="col-6 p-2 fw-bold fs-4 text-center">
+                            Points Compétences: <br>
+                            <span class="badge bg-warning" id="skillPoints" data-max="xx" data-value="xx">XX</span>
+                        </div>
+                    </div>
+                    <div id="lifePathTable" class="row"></div>
+                    <div id="levelTable">
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>Niveau</strong>
+                            </div>
+                            <div class="col-3"><strong>Attr</strong></div>
+                            <div class="col-3"><strong>Comp</strong></div>
+                        </div>
+                    </div>
+                    <div id="thresholdTable">
+                        <div class="row">
+                            <div class="col-9">
+                                <strong>Difficulté</strong>
+                            </div>
+                            <div class="col-3"><strong>Jet</strong></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-        </div>
     </main>
 </div>
 <script

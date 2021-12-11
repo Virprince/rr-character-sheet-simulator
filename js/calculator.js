@@ -13,8 +13,10 @@ const buildDom = data => {
     const skillTable = $('#skillTable');
     const lifePathTable = $('#lifePathTable');
     const statTable = $('#statTable');
+    const levelTable = $('#levelTable');
+    const thresholdTable = $('#thresholdTable');
 
-    const {startPoints,maxPoints,attributes,skills,specials,stats,lifePaths} = data;
+    const {startPoints,maxPoints,attributes,skills,specials,stats,lifePaths,levels,thresholds} = data;
 
     const init = () => {
 
@@ -37,6 +39,14 @@ const buildDom = data => {
         stats.forEach(el => {
             statTable.append(stat(el));
             update(data).stat(el, $(stat(el)));
+        })
+
+        levels.forEach(el => {
+            levelTable.append(level(el));
+        })
+
+        thresholds.forEach(el => {
+            thresholdTable.append(threshold(el));
         })
 
         $("#attrPoints")
@@ -76,6 +86,12 @@ const buildDom = data => {
         `;
     };
     const skill = (skill) => {
+
+        let btnDisabled = '';
+        if (skill.startMax === 0){
+            btnDisabled = 'disabled';
+        }
+
         return `
             <div class="js-row row border" data-id="${skill.id}">
                 <div class="col-6 border-start">
@@ -99,7 +115,7 @@ const buildDom = data => {
                     + <span class="js-totalValue" data-totalvalue="0">0</span>
                 </div>
                 <div class="col-2 d-flex align-items-start border-start border-end">
-                    <button class="btn btn-xs btn-outline-info js-point" data-action="add" data-type="skill">+</button>
+                    <button class="btn btn-xs btn-outline-info js-point" data-action="add" data-type="skill" ${btnDisabled}>+</button>
                     <button class="btn btn-xs btn-outline-info js-point" data-action="remove" data-type="skill" disabled>-</button>
                 </div>
                 
@@ -130,7 +146,7 @@ const buildDom = data => {
                 <div class="col"></div>
                 <div class="col"></div>
                 <div class="col border">
-                    + <span class="js-value" data-value="0" >0</span>
+                    + <span class="js-value" data-bonus="0" data-value="0" >0</span>
                 </div>
                 <div class="col-2 border-start border-end">
                     <select class="js-guild">
@@ -148,7 +164,7 @@ const buildDom = data => {
         });
 
       return `
-        <div class="col js-lifePath" data-id="${lifePath.id}" data-active="false">
+        <div class="col-6 js-lifePath" data-id="${lifePath.id}" data-active="false">
                 <div class="p-3 text-center d-grid gap-2">
                 <p>
                     <span class="fs-6 fw-bold">${lifePath.name}</span>
@@ -183,6 +199,27 @@ const buildDom = data => {
                 <div class="col border-start">
                     <span class="js-value" data-value="0">0</span>
                 </div>
+            </div>
+        `;
+    }
+    const level = (level) => {
+        return `
+            <div class="row">
+                <div class="col-6">
+                    ${level.name}
+                </div>
+                <div class="col-3">+ ${level.attr}</div>
+                <div class="col-3">+ ${level.skill}</div>
+            </div>
+        `;
+    }
+    const threshold = (threshold) => {
+        return `
+            <div class="row">
+                <div class="col-9">
+                    ${threshold.name}
+                </div>
+                <div class="col-3">+ ${threshold.roll}</div>
             </div>
         `;
     }
@@ -275,6 +312,9 @@ const update = data => {
         if (type === 'attribute'){
             updateMod(row);
         }
+        stats.forEach(stat => {
+            updateStat(stat);
+        })
     }
 
     const updateType = target =>{
@@ -317,11 +357,19 @@ const update = data => {
             }
         })
 
+        stats.forEach(stat => {
+            updateStat(stat);
+        })
+
     }
 
     const updateGuild = level => {
         let row = $(level).closest('.js-row');
         row.find('.js-value').html($(level).val()).attr('data-value', $(level).val());
+
+        stats.forEach(stat => {
+            updateStat(stat);
+        })
     }
 
     const updateLifePath = target => {
@@ -361,6 +409,10 @@ const update = data => {
         row.attr('data-active', false);
         row.find('[data-action="select"]').removeClass('d-none');
         row.find('[data-action="reset"]').addClass('d-none');
+
+        stats.forEach(stat => {
+            updateStat(stat);
+        })
     }
 
     const addLifePath = (lifePathData, row) => {
@@ -383,61 +435,45 @@ const update = data => {
         row.attr('data-active', true);
         row.find('[data-action="select"]').addClass('d-none');
         row.find('[data-action="reset"]').removeClass('d-none');
+        stats.forEach(stat => {
+            updateStat(stat);
+        })
     }
 
-    const updateStat = (statData, row) => {
+    const updateStat = (statData) => {
         let result = '';
-        let id = row.attr('data-id');
+        let id = statData.id;
         if (statData.calc){
             result = statData.calc.value;
         }
 
         if (statData.hasOwnProperty("calc") && statData.calc.hasOwnProperty("mod")){
-            console.log('statData.calc.mod', statData.calc.mod);
-            console.log('id', id);
-
             // trouver les skills/attributes
-
             let modCalc = 0;
-            if (statData.calc.hasOwnProperty("base")){
-                modCalc += statData.calc.base;
-            }
-
             statData.calc.mod.forEach(el => {
-                console.log("el", el);
-                // let skill = skills.find(o => o.id === id);
-                // let attribute = attributes.find(o => o.id === id);
-                //
-                // let el = null;
-                //
-                // if (skill !== undefined) {
-                //     el = skill
-                // }
-                // if (attribute !== undefined) {
-                //     el = attribute
-                // }
-
                 let modCell = $(`.js-row[data-id="${el}"] .js-value`);
-
                 let dataBonus = parseInt(modCell.attr('data-bonus'));
                 let value = parseInt(modCell.attr('data-value'));
 
-                modCalc += (dataBonus + value) * attrModifier;
-
-
-                console.log("dataBonus", dataBonus);
-                console.log("value", value);
+                modCalc += (dataBonus + value);
             })
+
             // moyenne
             modCalc = modCalc /statData.calc.mod.length;
+            if (statData.calc.hasOwnProperty("attrModifier")){
+                modCalc = modCalc * statData.calc.attrModifier;
+            }
             modCalc = Math.floor(modCalc);
 
-            let rowEl = skillTable.find(`[data-id="${statData.id}"]`)
-
-            rowEl.find('.js-value').html(modCalc).attr('data-value', modCalc);
-
-
+            if (statData.calc.hasOwnProperty("base")){
+                modCalc += statData.calc.base;
+            }
+            result = modCalc;
         }
+
+
+        let rowEl = statTable.find(`[data-id="${id}"]`)
+        rowEl.find('.js-value').html(result).attr('data-value', result);
     }
 
     return {
