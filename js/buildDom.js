@@ -214,7 +214,7 @@ export const buildDom = data => {
                 <div class="col-9">
                     ${threshold.name}
                 </div>
-                <div class="col-3 border-start">+ ${threshold.roll}</div>
+                <div class="col-3 border-start">${threshold.roll} +</div>
             </div>
         `;
     }
