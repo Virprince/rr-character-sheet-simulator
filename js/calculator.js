@@ -1,7 +1,6 @@
 import data from "./charactersSheet.json" assert { type: "json" };
 import {buildDom} from "./buildDom.js";
-import Item from "./Item.js";
-import Attribute from "./Attribute.js";
+
 
 
 const {startPoints,maxPoints,attributes,skills} = data;
