@@ -1,0 +1,36 @@
+body {
+
+  --color-dark: #0a040a;
+  --vce-color-primary: #382A25;
+  --vce-color-primary-light: #BB9373;
+  --vce-color-secondary: #71759D;
+  --vce-color-secondary-alt: #919EC9;
+
+  background: var(--color-dark);
+  color: #fff;
+}
+
+
+[data-active="true"] > div {
+  background: var(--vce-color-secondary-alt);
+}
+
+.js-row,
+.js-stat {
+  background: var(--vce-color-primary);
+}
+
+.border-end,
+.border-start,
+.border {
+  border-color: var(--vce-color-primary-light)!important;
+}
+
+.btn-primary,
+.bg-primary {
+  background-color: var(--vce-color-secondary)!important;
+}
+.btn-primary,
+.border-primary {
+  border-color: var(--vce-color-secondary)!important;
+}

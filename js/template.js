@@ -7,7 +7,7 @@ const skill = (skill) => {
 
     return `
             <div class="js-row row border" data-id="${skill.id}">
-                <div class="col-6 d-flex align-items-center">
+                <div class="col-8 col-md-6 d-flex align-items-center order-1">
                     <p class="m-0 fw-bold">${skill.name}
                         <a tabindex="0" 
                         role="button" 
@@ -18,16 +18,16 @@ const skill = (skill) => {
                         <span class="badge bg-light text-dark">?</span></a>
                     </p>
                 </div>
-                <div class="col border-start d-flex align-items-center" data-mod="0">
+                <div class="col py-2 py-md-0 border-top border-top-md-0 border-md-start d-flex align-items-center order-3" data-mod="0">
                     + <span class="js-modValue" data-modvalue="0">0</span>
                 </div>
-                <div class="col border-start d-flex align-items-center">
+                <div class="col py-2 py-md-0 border-top border-md-top-0 border-start d-flex align-items-center order-4">
                     + <span class="js-value" data-bonus="0" data-value="0" data-startmax="${skill.startMax}">0</span>
                 </div>
-                <div class="col border-start d-flex align-items-center">
+                <div class="col py-2 py-md-0 border-top border-md-top-0 border-start d-flex align-items-center order-5">
                     + <span class="js-totalValue" data-totalvalue="0">0</span>
                 </div>
-                <div class="col-2 d-flex align-items-start border-start">
+                <div class="col-4 col-md-2 d-flex align-items-start border-start order-2 order-md-last">
                     <button class="btn btn-xs btn-light js-point me-2" data-action="add" data-type="${skill.type}" ${btnDisabled}><i class="bi bi-plus"></i></button>
                     <button class="btn btn-xs btn-light js-point" data-action="remove" data-type="${skill.type}" disabled><i class="bi bi-dash-lg"></i></button>
                 </div>
@@ -98,7 +98,7 @@ const lifePath = (lifePath) => {
 const stat = (stat) => {
     return `
             <div class="js-stat row border" data-id="${stat.id}">
-                <div class="col-10">
+                <div class="col-8 col-md-10">
                     <p class="m-0 fw-bold pt-2 pb-2">${stat.name}
                         <a tabindex="0" 
                         role="button" 
