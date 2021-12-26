@@ -1,93 +1,11 @@
-export const buildDom = data => {
+const skill = (skill) => {
 
-    const attrTable = $('#attrTable');
-    const skillTable = $('#skillTable');
-    const lifePathTable = $('#lifePathTable');
-    const statTable = $('#statTable');
-    const levelTable = $('#levelTable');
-    const thresholdTable = $('#thresholdTable');
-
-    const {startPoints,maxPoints,attributes,skills,specials,stats,lifePaths,levels,thresholds} = data;
-
-    const init = () => {
-
-        attributes.forEach(el => {
-            attrTable.append(attribute(el));
-        })
-
-        skills.forEach(el => {
-            skillTable.append(skill(el));
-        })
-
-        specials.forEach(el => {
-            skillTable.append(special(el));
-        })
-
-        lifePaths.forEach(el => {
-            lifePathTable.append(lifePath(el));
-        })
-
-        stats.forEach(el => {
-            statTable.append(stat(el));
-            // update(data).stat(el, $(stat(el)));
-        })
-
-        levels.forEach(el => {
-            levelTable.append(level(el));
-        })
-
-        thresholds.forEach(el => {
-            thresholdTable.append(threshold(el));
-        })
-
-        $("#attrPoints")
-            .html(startPoints.attr)
-            .attr('data-max',startPoints.attr )
-            .attr('data-value',startPoints.attr );
-        $("#skillPoints")
-            .html(startPoints.skill)
-            .attr('data-max',startPoints.skill )
-            .attr('data-value',startPoints.skill );
+    let btnDisabled = '';
+    if (skill.startMax === 0){
+        btnDisabled = 'disabled';
     }
 
-    const attribute = (attr) => {
-        return `
-            <div class="js-row row border" data-id="${attr.id}">
-                <div class="col-6 d-flex align-items-center">
-                    <p class="m-0 fw-bold">${attr.name}
-                        <a tabindex="0" 
-                        role="button" 
-                        data-bs-toggle="popover" 
-                        data-bs-trigger="focus" 
-                        data-bs-html="true"
-                        title="Infos" data-bs-content="${attr.desc}">
-                        <span class="badge bg-light text-dark">?</span></a>
-                    </p>
-                </div>
-                <div class="col border-start d-flex align-items-center" data-mod="0">
-                    + <span class="js-modValue" data-modvalue="0">0</span>
-                </div>
-                <div class="col border-start  d-flex align-items-center">
-                    + <span class="js-value" data-bonus="0" data-value="0" data-startmax="${attr.startMax}">0</span>
-                </div>
-                <div class="col border-start d-flex align-items-center">
-                    + <span class="js-totalValue" data-totalvalue="0">0</span>
-                </div>
-                <div class="col-2 d-flex align-items-start border-start">
-                    <button class="btn btn-xs btn-light js-point me-2" data-action="add" data-type="attribute"><i class="bi bi-plus"></i></button>
-                    <button class="btn btn-xs btn-light js-point" data-action="remove" data-type="attribute" disabled><i class="bi bi-dash-lg"></i></button>
-                </div>
-            </div>
-        `;
-    };
-    const skill = (skill) => {
-
-        let btnDisabled = '';
-        if (skill.startMax === 0){
-            btnDisabled = 'disabled';
-        }
-
-        return `
+    return `
             <div class="js-row row border" data-id="${skill.id}">
                 <div class="col-6 d-flex align-items-center">
                     <p class="m-0 fw-bold">${skill.name}
@@ -110,22 +28,22 @@ export const buildDom = data => {
                     + <span class="js-totalValue" data-totalvalue="0">0</span>
                 </div>
                 <div class="col-2 d-flex align-items-start border-start">
-                    <button class="btn btn-xs btn-light js-point me-2" data-action="add" data-type="skill" ${btnDisabled}><i class="bi bi-plus"></i></button>
-                    <button class="btn btn-xs btn-light js-point" data-action="remove" data-type="skill" disabled><i class="bi bi-dash-lg"></i></button>
+                    <button class="btn btn-xs btn-light js-point me-2" data-action="add" data-type="${skill.type}" ${btnDisabled}><i class="bi bi-plus"></i></button>
+                    <button class="btn btn-xs btn-light js-point" data-action="remove" data-type="${skill.type}" disabled><i class="bi bi-dash-lg"></i></button>
                 </div>
                 
             </div>
         `;
-    }
-    const special = (special) => {
+}
+const special = (special) => {
 
-        let options = ``;
+    let options = ``;
 
-        special.levels.forEach(option => {
-            options += `<option value="${option.value}">${option.title}</option>`;
-        });
+    special.levels.forEach(option => {
+        options += `<option value="${option.value}">${option.title}</option>`;
+    });
 
-        return `
+    return `
             <div class="js-row row border" data-id="${special.id}">
                 <div class="col-6 border-start d-flex align-items-center">
                     <p class="m-0 fw-bold">${special.name} 
@@ -150,15 +68,15 @@ export const buildDom = data => {
                 </div>
             </div>
         `;
-    }
-    const lifePath = (lifePath) => {
-        let content = lifePath.desc;
+}
+const lifePath = (lifePath) => {
+    let content = lifePath.desc;
 
-        lifePath.bonus.forEach(bonus => {
-            content += `<br/> ${bonus.name} + ${bonus.value}`
-        });
+    lifePath.bonus.forEach(bonus => {
+        content += `<br/> ${bonus.name} + ${bonus.value}`
+    });
 
-        return `
+    return `
         <div class="col-6 js-lifePath" data-id="${lifePath.id}" data-active="false">
                 <div class="p-3 text-center d-grid gap-2">
                 <p>
@@ -176,9 +94,9 @@ export const buildDom = data => {
             </div>
         </div>
       `;
-    }
-    const stat = (stat) => {
-        return `
+}
+const stat = (stat) => {
+    return `
             <div class="js-stat row border" data-id="${stat.id}">
                 <div class="col-10">
                     <p class="m-0 fw-bold pt-2 pb-2">${stat.name}
@@ -196,9 +114,9 @@ export const buildDom = data => {
                 </div>
             </div>
         `;
-    }
-    const level = (level) => {
-        return `
+}
+const level = (level) => {
+    return `
             <div class="row border">
                 <div class="col-6">
                     ${level.name}
@@ -207,21 +125,46 @@ export const buildDom = data => {
                 <div class="col-3 border-start">+ ${level.skill}</div>
             </div>
         `;
-    }
-    const threshold = (threshold) => {
-        return `
+}
+const threshold = (threshold) => {
+    return `
             <div class="row border">
                 <div class="col-9">
                     ${threshold.name}
                 </div>
-                <div class="col-3 border-start">+ ${threshold.roll}</div>
+                <div class="col-3 border-start">${threshold.roll} +</div>
             </div>
         `;
-    }
-    return {
-        init : () => {
-            init()
-        }
+}
+const point = (point) => {
+    return `
+        <span data-points data-max="${point}" data-value="${point}">${point}</span>
+    `;
+}
 
-    }
-};
+const template = {
+    skill: (item) => {
+        return skill(item);
+    },
+    special: (item) => {
+        return special(item);
+    },
+    lifePath: (item) => {
+        return lifePath(item);
+    },
+    stat: (item) => {
+        return stat(item);
+    },
+    level: (item) => {
+        return level(item);
+    },
+    threshold: (item) => {
+        return threshold(item);
+    },
+    point: (item) => {
+        return point(item);
+    },
+
+}
+
+export default template;

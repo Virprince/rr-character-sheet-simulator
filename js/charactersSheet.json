@@ -1,53 +1,58 @@
 {
   "attrModifier": 0.4,
   "startPoints": {
-    "attr": 42,
-    "skill": 40
+    "attr": 39,
+    "skill": 44
   },
   "maxPoints": {
     "attr": 18,
     "skill": 12
   },
-  "attributes": [
+  "items": [
     {
+      "type": "attribute",
       "id": "FOR",
       "name": "Force",
       "desc": "Représente sa force physique, sa capacité à soulever des objets lourds, à faire des dégats",
       "startMax": 9
     },
     {
+      "type": "attribute",
       "id": "AGI",
       "name": "Agilité",
       "desc": "Représente son agilité, sa rapidité, son sens de l'équilibre",
       "startMax": 9
     },
     {
+      "type": "attribute",
       "id": "ROB",
       "name": "Robustesse",
       "desc": "Représente son agilité, sa rapidité, son sens de l'équilibre",
       "startMax": 9
     },
     {
+      "type": "attribute",
       "id": "VOL",
       "name": "Volonté",
       "desc": "Représente la faculté de resister aux influences extérieures (colère, douleur, doute), se concentrer, garder son sang froid",
       "startMax": 9
     },
     {
+      "type": "attribute",
       "id": "RAI",
       "name": "Raisonnement",
       "desc": "Représente la faculté de réagir aux éléments factuels, de faire des associations d'idées, etc",
       "startMax": 9
     },
     {
+      "type": "attribute",
       "id": "INT",
       "name": "Intuition",
       "desc": "Représente l'instinct, l'interprétation de signe, l'intuition ",
       "startMax": 9
-    }
-  ],
-  "skills": [
+    },
     {
+      "type": "skill",
       "id": "CMN",
       "name": "Combat mains nues",
       "desc": "Représente l'instinct, l'interprétation de signe, l'intuition <br><br> Moyenne(Force + Agilité + Volonté)x0,4 arrondi à l'inférieur",
@@ -55,6 +60,7 @@
       "mod": ["FOR", "AGI", "VOL"]
     },
     {
+      "type": "skill",
       "id": "CAR",
       "name": "Combat armé",
       "desc": "Représente tout type de combat avec une arme (armes 1 main, armes 2 mains, armes improvisées, boucliers, etc)<br><br> Moyenne(Force + Agilité + Raisonnement)x0,4 arrondi à l'inférieur",
@@ -62,6 +68,7 @@
       "mod": ["FOR", "AGI", "RAI"]
     },
     {
+      "type": "skill",
       "id": "CDI",
       "name": "Combat distance",
       "desc": "Représente tout type de combat à distance (arcs, armes de jet, lancer son arme, etc)<br><br> Moyenne(Force + Agilité + Intuition)x0,4 arrondi à l'inférieur",
@@ -69,6 +76,7 @@
       "mod": ["FOR", "AGI", "INT"]
     },
     {
+      "type": "skill",
       "id": "PSO",
       "name": "Premiers soins",
       "desc": "Représente la capacité à soigner les blessures en situation d'urgence, à stabiliser un blessé, à réduire le niveau des blessures sur le moment.<br><br> Moyenne(Intuition + Volonté)x0,4 arrondi à l'inférieur",
@@ -76,6 +84,7 @@
       "mod": ["VOL", "INT"]
     },
     {
+      "type": "skill",
       "id": "CHI",
       "name": "Chirurgie",
       "desc": "Représente la connaissance médicale du corps humain et la capacité d'effectuer des actions complexe pour soigner des blessures. <br/>Ces actions doivent être effectuées dans un environnement calme (pas au milieu de l'action)<br/>ex: recoudre une plaie, amputer, réduire une hémoragie, réduire une fracture, retirer un projectile, etc<br><br> Moyenne(Raisonnement + Volonté)x0,4 arrondi à l'inférieur",
@@ -83,6 +92,7 @@
       "mod": ["VOL", "RAI"]
     },
     {
+      "type": "skill",
       "id": "APO",
       "name": "Apothicaire",
       "desc": "Représente la connaissance en herboristerie, chimie et alchimie, symptomes des maladies, poisons et comment les traiter. <br/>Peut se rapprocher de la médecine générale.<br><br> Moyenne(Raisonnement + Intuition)x0,4 arrondi à l'inférieur",
@@ -90,6 +100,7 @@
       "mod": ["RAI", "INT"]
     },
     {
+      "type": "skill",
       "id": "ATH",
       "name": "Athlétisme",
       "desc": "Représente l'utilisation de vos capacités physiques pour des occasions comme l'escalade, la course de vitesse ou d'endurance, tirer une corde, etc<br><br> Moyenne(Force + Agilité + Robustesse)x0,4 arrondi à l'inférieur",
@@ -97,6 +108,7 @@
       "mod": ["FOR", "AGI", "ROB"]
     },
     {
+      "type": "skill",
       "id": "ART",
       "name": "Artisanat",
       "desc": "Représente la connaissance d'un métier manuel ou d'une famille de métier, l'habitude du travail manuel, etc. <br/>Les joueurs sont libre de l'interprétation mais attention, un professionnel forgeron n'est pas obligatoirement un professionnel charpentier...<br><br> Moyenne(Robustesse + Agilité + Raisonnement)x0,4 arrondi à l'inférieur",
@@ -104,6 +116,7 @@
       "mod": ["AGI", "RAI", "ROB"]
     },
     {
+      "type": "skill",
       "id": "REP",
       "name": "Représentation",
       "desc": "Représente la capacité à se donner en spectacle, chant, musique, théatre.<br><br> Moyenne(Robustesse + Agilité + Intuition)x0,4 arrondi à l'inférieur",
@@ -111,6 +124,7 @@
       "mod": ["AGI", "INT", "ROB"]
     },
     {
+      "type": "skill",
       "id": "ESC",
       "name": "Escamotage",
       "desc": "Représente la capacité à voler, à crocheter, à faire disparaitre un objet alors qu'on est en public, à faire un tour de passe passe, a subtiliser discrétement un objet sur un personnage.<br><br> Moyenne(Intuition + Agilité + Volonté)x0,4 arrondi à l'inférieur",
@@ -118,6 +132,7 @@
       "mod": ["AGI", "INT", "VOL"]
     },
     {
+      "type": "skill",
       "id": "OCC",
       "name": "Occultisme",
       "desc": "Représente les connaissances occulte en sorcellerie ou magie divine, la capacité du personnage à conduire ou à participer à des rituels.<br><br> Moyenne(Raisonnement + Intuition + Volonté)x0,4 arrondi à l'inférieur",
@@ -125,6 +140,7 @@
       "mod": ["VOL", "RAI", "INT"]
     },
     {
+      "type": "skill",
       "id": "DIS",
       "name": "Discrétion",
       "desc": "Représente la capacité à se déplacer de manière silencieuse, à savoir se fondre dans la masse ou le décors, à se déplacer dans les ombres, à faire des signes sans attirer l'attention<br><br> Moyenne(Agilité + Intuition)x0,4 arrondi à l'inférieur",
@@ -132,6 +148,7 @@
       "mod": ["AGI", "INT"]
     },
     {
+      "type": "skill",
       "id": "PER",
       "name": "Perception",
       "desc": "Représente la capacité d'observation de l'environnement, remarquer des détails proche ou lointain, l'évaluation des distances, les actions/intentions physique d'un personnage (ex remarquer une lame dissimulée, remarquer une posture agressive) mais PAS les intentions ``sociale`` (ex: sembler mentir, sembler géné ) <br><br> Moyenne(Intuition + Raisonnement)x0,4 arrondi à l'inférieur",
@@ -139,6 +156,7 @@
       "mod": ["INT", "RAI"]
     },
     {
+      "type": "skill",
       "id": "TRO",
       "name": "Tromperie",
       "desc": "Représente la capacité à mentir, à déguiser la vérité, à jouer la comédie, à dissimuler ses intentions, à tromper, etc<br><br> Moyenne(Intuition + Volonté)x0,4 arrondi à l'inférieur",
@@ -146,15 +164,15 @@
       "mod": ["VOL", "INT"]
     },
     {
+      "type": "skill",
       "id": "PSY",
       "name": "Psychologie",
       "desc": "Représente la capacité à sentir l'état d'esprit d'un personnage, reconnaitre un mensonge, lire le langage corporel, etc<br><br> Moyenne(Raisonnement + Intuition)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["RAI", "INT"]
-    }
-  ],
-  "specials": [
+    },
     {
+      "type": "special",
       "id": "HER",
       "name": "Héritage",
       "desc": "Représente votre lien avec le pouvoir des stèles",
@@ -403,23 +421,23 @@
       "attr": 3,
       "skill": 2
     },{
-      "name": "Initié",
+      "name": "Entrainé",
       "attr": 6,
       "skill": 4
     },{
-      "name": "Entrainé",
+      "name": "Professionnel",
       "attr": 9,
       "skill": 6
     },{
-      "name": "Pro",
+      "name": "Expert",
       "attr": 12,
       "skill": 8
     },{
-      "name": "Expert",
+      "name": "Maitre",
       "attr": 15,
       "skill": 10
     },{
-      "name": "Maitre",
+      "name": "Exceptionnel",
       "attr": 18,
       "skill": 12
     }
