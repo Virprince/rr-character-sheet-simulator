@@ -55,7 +55,7 @@
       "type": "skill",
       "id": "CMN",
       "name": "Combat mains nues",
-      "desc": "Représente l'instinct, l'interprétation de signe, l'intuition <br><br> Moyenne(Force + Agilité + Volonté)x0,4 arrondi à l'inférieur",
+      "desc": "Représente tout type de combat sans arme (bagarre, lutte, art martiaux etc)<br><br> Moyenne(Force + Agilité + Volonté)x0,4 arrondi à l'inférieur",
       "startMax": 6,
       "mod": ["FOR", "AGI", "VOL"]
     },
@@ -213,7 +213,7 @@
     {
       "id": "ARM",
       "name": "Armure (Mutator)",
-      "desc": "Niveau d'armure calculé automatiquement avec l'équipement porté par le joueur.<br>Merci de rester fairplay et de ne pas cacher les pièces d'armures pour vous battre à poil..."
+      "desc": "Niveau d'armure calculé automatiquement avec l'équipement porté par le joueur.<br>Merci de rester fairplay et de ne pas cacher les pièces d'armures pour vous battre à poil... <br><br> - Léger: +2 Agilité, +3 Armure <br> - Intermédiaire: +6 Armure <br> - Lourd: -2 Agilité, +9 Armure  "
     },
     {
       "id": "FAT",

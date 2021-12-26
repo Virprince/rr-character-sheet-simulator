@@ -1,5 +1,6 @@
 body {
   --color-dark: #0a040a;
+  --color-orange: #DF4400;
   --vce-color-primary: #382A25;
   --vce-color-primary-light: #BB9373;
   --vce-color-secondary: #71759D;
@@ -17,6 +18,7 @@ body {
   background: var(--vce-color-primary);
 }
 
+.border-top,
 .border-end,
 .border-start,
 .border {
@@ -31,6 +33,23 @@ body {
 .btn-primary,
 .border-primary {
   border-color: var(--vce-color-secondary) !important;
+}
+
+.popover-header,
+.bg-light {
+  background-color: var(--vce-color-primary-light) !important;
+  color: var(--vce-color-primary) !important;
+}
+
+.bg-warning {
+  background-color: var(--color-orange) !important;
+}
+
+@media screen and (min-width: 768px) {
+  #attrTable .border-top,
+#skillTable .border-top {
+    border-color: transparent !important;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
